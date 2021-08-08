@@ -7,7 +7,7 @@ exports.create = async (req, res) => {
         const { name } = req.body;
         // const Generation = await new Generation({ name, slug: slugify(name) }).save();
         // res.json(generation);
-        //res.json(await new Generation({ name, slug: slugify(name) }).save());
+        // res.json(await new Generation({ name, slug: slugify(name) }).save());
         res.json(await new Brand({ name, slug: name }).save());
     } catch (err) {
         // console.log(err);

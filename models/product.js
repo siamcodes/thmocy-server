@@ -54,26 +54,26 @@ const productSchema = new mongoose.Schema(
       type: String,
       enum: ["Black", "Brown", "Silver", "White", "Blue", "Red", "Green"],
     },
-    brand: {
-      type: String,
-     // ref: "Brand",
-    },
-    generations: [
-      {
-        type: String,
-       // ref: "Generation",
-      },
-    ],
-    //brand: {
-    //  type: String,
-    //  enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa", "Stallion"],
-    //},
-    // ratings: [
+    // brand: {
+    //   type: String,
+    //   ref: "Brand",
+    // },
+    // generations: [
     //   {
-    //     star: Number,
-    //     postedBy: { type: ObjectId, ref: "User" },
+    //     type: String,
+    //     ref: "Generation",
     //   },
     // ],
+    brand: {
+      type: String,
+      enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa", "Stallion"],
+    },
+    ratings: [
+      {
+        star: Number,
+        postedBy: { type: ObjectId, ref: "User" },
+      },
+    ],
   },
   { timestamps: true }
 );
