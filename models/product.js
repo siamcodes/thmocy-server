@@ -66,7 +66,7 @@ const productSchema = new mongoose.Schema(
     // ],
     brand: {
       type: String,
-      enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa", "Stallion"],
+      enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa", "Stallion","-"],
     },
     ratings: [
       {
