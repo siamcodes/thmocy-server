@@ -11,14 +11,14 @@ const app = express();
 
 // db
 mongoose
-    .connect(process.env.DATABASE_CLOUD, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true 
-    })
-    .then(() => console.log("DB CONNECTED"))
-    .catch((err) => console.log("DB CONNECTION ERR", err));
+  .connect(process.env.DATABASE_CLOUD, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB CONNECTED"))
+  .catch((err) => console.log("DB CONNECTION ERR", err));
 
 // middlewares
 app.use(morgan("dev"));
@@ -29,7 +29,6 @@ app.use(cors());
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
 // port
-const port = process.env.PORT || 8003;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
-

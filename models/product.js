@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      maxlength: 200,
+      maxlength: 32,
       text: true,
     },
     slug: {
@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-      maxlength: 500000,
+      maxlength: 2000,
       text: true,
     },
     price: {
@@ -52,21 +52,11 @@ const productSchema = new mongoose.Schema(
     },
     color: {
       type: String,
-      enum: ["Black", "Brown", "Silver", "White", "Blue", "Red", "Green", "Yellow", "Pink", "Gray"],
+      enum: ["Black", "Brown", "Silver", "White", "Blue", "Green", "Red"],
     },
-    // brand: {
-    //   type: String,
-    //   ref: "Brand",
-    // },
-    // generations: [
-    //   {
-    //     type: String,
-    //     ref: "Generation",
-    //   },
-    // ],
     brand: {
       type: String,
-      enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa", "Stallion", "Other.."],
+      enum: ["Honda", "Yamaha", "Suzuki", "Kawasaki", "Vespa"],
     },
     ratings: [
       {
